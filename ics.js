@@ -56,7 +56,6 @@ var ics = function() {
             //TODO add time and time zone? use moment to format?
             var start_date = new Date(begin);
             var end_date = new Date(stop);
-            console.log(start_date.toString());
 
             var start_year = ("0000" + (start_date.getFullYear().toString())).slice(-4);
             var start_month = ("00" + ((start_date.getMonth() + 1).toString())).slice(-2);
@@ -75,8 +74,6 @@ var ics = function() {
             // Since some calendars don't add 0 second events, we need to remove time if there is none...
             var start_time = 'T' + start_hours + start_minutes + start_seconds;
             var end_time = 'T' + end_hours + end_minutes + end_seconds;
-            console.log(start_time);
-            console.log(end_time);
 
             if(end_date - start_date === 0){
                 start_time = '';
